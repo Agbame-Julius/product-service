@@ -20,12 +20,12 @@ public class ProductService {
 
 
     public void createProduct(ProductRequest productRequest){
-        var product = mapper.toProduct(productRequest);
-//        Product product = Product.builder()
-//                .name(productRequest.getName())
-//                .description(productRequest.getDescription())
-//                .price(productRequest.getPrice())
-//                .build();
+//        var product = mapper.toProduct(productRequest);
+        Product product = Product.builder()
+                .name(productRequest.getName())
+                .description(productRequest.getDescription())
+                .price(productRequest.getPrice())
+                .build();
         repository.insert(product);
         log.info("Product save successfully");
 
